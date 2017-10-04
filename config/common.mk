@@ -38,7 +38,11 @@ PRODUCT_COPY_FILES += \
 
 # Copy LatinIME for gesture typing
 PRODUCT_COPY_FILES += \
+    vendor/validus/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
     vendor/validus/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+
+# Include LatinIME dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/validus/overlay/dictionaries
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
@@ -55,7 +59,7 @@ PRODUCT_COPY_FILES += \
 
 # Fix Dialer
 PRODUCT_COPY_FILES +=  \
-    vendor/validus/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml 
+    vendor/validus/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # ValidusOs-specific startup services
 PRODUCT_COPY_FILES += \
