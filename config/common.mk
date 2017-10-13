@@ -93,9 +93,9 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     OmniJaws \
     OmniStyle \
-    GZRoms
+    GZRoms \
+    ThemeInterfacer
 #    WolvesDen \
-#    ThemeInterfacer \
 #    Eleven \
 #    OmniSwitch \
 #    Turbo \
