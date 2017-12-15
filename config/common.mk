@@ -64,9 +64,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 # Camera Effects
-PRODUCT_COPY_FILES +=  \
-    vendor/aosp/prebuilt/common/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
-    vendor/aosp/prebuilt/common/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
+#PRODUCT_COPY_FILES +=  \
+#    vendor/aosp/prebuilt/common/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
+#    vendor/aosp/prebuilt/common/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
@@ -108,7 +108,6 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    Calculator \
     LatinIME \
     BluetoothExt \
     OmniJaws \
@@ -200,8 +199,8 @@ include vendor/pixelstyle/config.mk
 include vendor/gapps/config.mk
 
 # Fix Google dialer
-PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+#PRODUCT_COPY_FILES += \
+#    vendor/aosp/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Camera Effects
 PRODUCT_COPY_FILES +=  \
