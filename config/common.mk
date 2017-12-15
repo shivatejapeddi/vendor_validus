@@ -9,10 +9,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    keyguard.no_require_sim=true
+    keyguard.no_require_sim=true \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+    ro.error.receiver.system.apps=com.google.android.gms \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.com.android.dataroaming=false \
+    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
+    ro.com.android.dateformat=MM-dd-yyyy \
+    persist.sys.disable_rescue=true
+
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=1
+    ro.build.selinux=1 \
+    ro.boot.vendor.overlay.theme=com.google.android.theme.pixel
 
 # Disable excessive dalvik debug messages
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -180,6 +190,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Pixel Style
 include vendor/pixelstyle/config.mk
+
+# GApps
+include vendor/gapps/config.mk
+
+# Fix Google dialer
+PRODUCT_COPY_FILES += \
+    vendor/aosp/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+
+# Camera Effects
+PRODUCT_COPY_FILES +=  \
+    vendor/validus/prebuilt/common/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
+    vendor/validus/prebuilt/common/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
 
 # Storage manager
 PRODUCT_PROPERTY_OVERRIDES += \
